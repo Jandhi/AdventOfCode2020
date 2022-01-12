@@ -8,7 +8,7 @@ with open('input.txt', 'r') as file:
 
         line = file.readline()
 
-
-
-for i in [0, 1, 2]:
-    print(i)
+for number in numbers:
+    for other in numbers:
+        if 2020 == number + other:
+            print(number * other)
