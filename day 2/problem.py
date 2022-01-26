@@ -15,13 +15,9 @@ with open('day 2/input.txt', 'r') as file:
 
         line = file.readline()
 
-def count_letter(letter, word) -> int:
-    return word.count(letter)
-
 def is_valid(min_count, max_count, letter, password) -> bool:
-    count = count_letter(letter, password)
+    count = password.count(letter)
     return min_count <= count <= max_count
-
 
 def count_valid_passwords(input) -> int:
     count = 0 
@@ -32,17 +28,10 @@ def count_valid_passwords(input) -> int:
     return count
 
 def is_valid_two(pos1, pos2, letter, password):
-    count = 0
     pos1_has_letter = password[pos1 - 1] == letter
     pos2_has_letter = password[pos2 - 1] == letter
-    if pos1_has_letter:
-        count += 1
-    if pos2_has_letter:
-        count += 1
-    if count == 1:
-        return True
-    else:
-        return False
+
+    return pos1_has_letter != pos2_has_letter
 
 def count_valid_passwords_two(input) -> int:
     count = 0 
@@ -55,5 +44,4 @@ def count_valid_passwords_two(input) -> int:
 print(
     count_valid_passwords(input),
     count_valid_passwords_two(input)
-
 )
