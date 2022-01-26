@@ -18,22 +18,18 @@ with open('day 2/input.txt', 'r') as file:
 def count_letter(letter, word) -> int:
     return word.count(letter)
 
-
-    
-
-
-
-#Words = When looing at input.txt, word may may not actually mean word, but the letters next to the numbers...
-
-
-
-
 def is_valid(min_count, max_count, letter, password) -> bool:
-    pass
+    count = count_letter(letter, password)
+    return min_count <= count <= max_count
+
+
+
+
+
 
 def count_valid_passwords(input) -> int:
     pass
 
-#print(
-    #count_valid_passwords(input)
-#)
+print(
+    count_valid_passwords(input)
+)
