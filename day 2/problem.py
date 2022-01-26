@@ -23,13 +23,14 @@ def is_valid(min_count, max_count, letter, password) -> bool:
     return min_count <= count <= max_count
 
 
-
-
-
-
 def count_valid_passwords(input) -> int:
-    pass
-
+    count = 0 
+    for entry in input:
+        min_count, max_count, letter, password = entry
+        if is_valid(min_count, max_count, letter, password):
+            count += 1
+    return count
+ 
 print(
     count_valid_passwords(input)
 )
