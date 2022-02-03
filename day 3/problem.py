@@ -21,14 +21,17 @@ width = len(grid[0])
 def has_tree(x : int, y : int) -> bool:
     return grid[y][x]
 
-def print_grid():
-    for row in grid:
-        output = ''
-        for has_tree in row:
-            if has_tree:
-                output += '#'
-            else:
-                output += '.'
-        print(output)
+count = 0
+x = 0
+y = 0
 
-print_grid()
+while y < height:
+    if has_tree(x, y):
+        count += 1
+    
+    #     #..
+    #     ..#
+    #     ...
+
+    x += 3
+    y += 1
