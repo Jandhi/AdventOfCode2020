@@ -14,6 +14,10 @@ with open('day 3/input.txt', 'r') as file:
 
         line = file.readline()
 
+height = len(grid)
+width = len(grid[0])
+
+# returns whether there is a tree at position x, y
 def has_tree(x : int, y : int) -> bool:
     return grid[y][x]
 
